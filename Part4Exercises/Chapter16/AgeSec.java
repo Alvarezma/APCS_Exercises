@@ -50,14 +50,14 @@ public class AgeSec {
         if (m >= 10) {
             d = d + 31;
         }
-        if (m >= 11) {
+        if (m == 11) {
             d = d + 30;
         }
 
         s = (d * 24 * 60 * 60);
-        double p = (s + 0.0) / (2500000000.0);
+        double p = (s + 0.0) / (2500000000.0) * 100;
 
-        System.out.println("Your Age: " + s);
+        System.out.println("Your Age in Seconds: " + s);
         System.out.println("Percent of your lifespan: " + p);
 
     }
