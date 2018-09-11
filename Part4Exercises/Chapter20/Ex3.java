@@ -26,8 +26,8 @@ public class Ex3 {
             count = count + 1;
         }
 
-        stanDevia
-        System.out.println("Sum is: " + sum);
+        double sd = Math.sqrt((sumSquared/n) - ((sum / 4) * (sum / 4)));
+        System.out.println("Standard deviation: " + sd);
 
     }
 }
