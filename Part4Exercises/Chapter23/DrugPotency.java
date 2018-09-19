@@ -14,7 +14,7 @@ public class DrugPotency {
             System.out.println("Month: " + month + "    effectiveness: " + effectiveness);
             effectiveness = effectiveness - (effectiveness * loss);
 
-            month = month + 1;
+            month++;
         }
 
         System.out.print("Month: " + month + "    effectiveness: " + effectiveness + " DISCARDED");
