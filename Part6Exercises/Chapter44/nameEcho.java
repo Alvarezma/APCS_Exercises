@@ -7,9 +7,19 @@ public class nameEcho   {
 
         System.out.println("Enter your name:");
         String fullName = scan.nextLine();
+
         fullName = fullName.trim();
-        System.out.println(fullName);
-        String lastName = fullName.substring(fullName.indexOf(" "), fullName.length());
-        System.out.println(lastName);
+
+        if (fullName.indexOf(" ") > 0)  {
+            String firstName = fullName.substring(0,fullName.indexOf(" "));
+            String lastName = fullName.substring(fullName.indexOf(" "));
+
+            lastName = lastName.toUpperCase();
+
+            System.out.println(firstName + lastName);
+        } else {
+            System.out.println(fullName);
+        }
+
     }
 }
