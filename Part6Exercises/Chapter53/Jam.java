@@ -31,4 +31,8 @@ public class Jam   {
         }
     }
 
+    public int getCapacity()    {
+        return this.capacity;
+    }
+
 }
