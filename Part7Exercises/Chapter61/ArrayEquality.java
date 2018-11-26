@@ -17,11 +17,12 @@ class ArrayEquality
         int[] arrayB = { 1, 2, 3, 4 };
 
         System.out.print("Arrays says: ");
-        if ( arrayA.equals( arrayB ) )    {
+        if ( Arrays.equals(arrayA, arrayB ) )    {
             System.out.println( "Equal" );
         } else  {
             System.out.println( "NOT Equal" );      
         }
+
         System.out.print("myEquals says: ");
         if ( ArrayEquality.myEquals( arrayA, arrayB ) )    {
             System.out.println( "Equal" );
