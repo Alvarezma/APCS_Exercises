@@ -29,17 +29,17 @@ class SquareCubeNoRepeats {
             int[] sqList = new int[String.valueOf(sq).length()];
             int[] cubeList = new int[String.valueOf(cube).length()];
 
-            for (int i = 0; i < sqList.length; i++)    {
-                sqList[i] = sq / (Math.pow(10, i));
+            for (int n = 0; n < sqList.length; n++)    {
+                sqList[n] = sq / (int)(Math.pow(10, n));
             }
-            for (int i = 0; i < cubeList.length; i++)    {
-                cubeList[i] = cube / (Math.pow(10, i));
+            for (int n = 0; n < cubeList.length; n++)    {
+                cubeList[n] = cube / (int)(Math.pow(10, n));
             }
 
             if ( repeats(sqList, cubeList) )    {
-                System.out.println( i + "   no repeats" );
-            } else  {
                 System.out.println( i + " repeats" );
+            } else  {
+                System.out.println( i + "   no repeats" );
             }
         }
     }
