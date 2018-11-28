@@ -14,5 +14,6 @@ public class WeightTester   {
         int second_half = june.subAverage(15, 29);
         System.out.println("First half = " + first_half );
         System.out.println("Second half = " + second_half );
+        System.out.println("difference = " + (second_half - first_half) );
     }
 }     
