@@ -30,4 +30,14 @@ class PhoneBook {
             }
         }
     }
+
+    public boolean add( String first, String last, String number)   {
+        for (int i = 0; i < phoneBook.length; i++)  {
+            if (phoneBook[i] == null)  {
+                phoneBook[i] = new PhoneEntry(first, last, number);
+                return true;
+            }
+        }
+        return false;
+    }
 }
