@@ -22,4 +22,5 @@ class Firefly    {
     public double getY() {return y;}
     public double getZ() {return z;}
     public boolean getAlive() {return alive;}
+    public void killed() {alive = false;}
 }
