@@ -40,4 +40,17 @@ class PhoneBook {
         }
         return false;
     }
+
+    public boolean delete( String targetFirstName, String targetLastName)   {
+        for ( int j=0; j < phoneBook.length; j++ )  {
+            if ( phoneBook[ j] != null && phoneBook[ j ].getFirstName().toUpperCase().equals( targetFirstName ) 
+            && phoneBook[ j ].getLastName().toUpperCase().equals( targetLastName )) {
+                phoneBook[ j ] = null;
+                return true;
+            }
+        }
+        return false;
+    }
+
+    
 }
