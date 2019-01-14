@@ -9,12 +9,16 @@ class DieGame {
         }
     }
 
-    public void roll()    {
-        players[2].rollAll();
+    public void roll(int currentPlayer)    {
+        players[currentPlayer].rollAll();
     }
 
-    public int getPlayerScore() {
-        return players[2].getScore();
+    public int getPlayerScore(int currentPlayer) {
+        return players[currentPlayer].getScore();
+    }
+
+    public int getNumberOfPlayers() {
+        return players.length;
     }
 
 }

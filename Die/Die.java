@@ -109,6 +109,10 @@ class Die {
         return value;
     }
 
+    public void setVal(int newVal)  {
+        this.value = newVal;
+    }
+
     public int getNumRolls() {
         return roll;
     }
