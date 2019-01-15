@@ -1,3 +1,5 @@
+import java.util.Random;
+
 class Die {
    
     private int value = 0;
@@ -6,11 +8,18 @@ class Die {
     private int target = 0;
     private int probability = 0;
     private boolean loaded = false;
+    private Random random;
 
     Die (int sides) {
         this.sides = sides;
-        value = 1 + ((int) (Math.random() * (sides)));
-        roll = 1;
+        random = new Random();
+        roll();
+    }
+
+    Die (int sides, int seed) {
+        this.sides = sides;
+        random = new Random(seed);
+        roll();
     }
 
     public void loadTheDie(int target, int probability, boolean loaded)    {
@@ -21,17 +30,21 @@ class Die {
 
     public void roll() {
         if (!loaded) {
-            value = 1 + ((int) (Math.random() * (sides)));
+            // value = 1 + ((int) (Math.random() * (sides)));
+            value = random.nextInt(sides) + 1;
         } else {
             if (((int) (Math.random() * 100)) <= probability) {
                 value = target;
             } else {
-                value = 1 + ((int) (Math.random() * (sides)));
+                // value = 1 + ((int) (Math.random() * (sides)));
+                value = random.nextInt(sides) + 1;
                 while (value == target) {
-                    value = 1 + ((int) (Math.random() * (sides)));
+                    // value = 1 + ((int) (Math.random() * (sides)));
+                    value = random.nextInt(sides) + 1;
                 }
             }
         }
+        roll++;
     }
 
     public String graphValsProb(int numOfRolls) {

@@ -10,6 +10,15 @@ class GroupOfDie {
         }
     }
 
+    GroupOfDie (int seed1, int seed2, int seed3, int seed4, int seed5) {
+        dice = new Die[5];
+        dice[0] = new Die(6, seed1);
+        dice[1] = new Die(6, seed2);
+        dice[2] = new Die(6, seed3);
+        dice[3] = new Die(6, seed4);
+        dice[4] = new Die(6, seed5);
+    }
+
     public void rollAll()    {
         score = 0;
         for (int i = 0; i < dice.length; i++)   {
@@ -35,7 +44,6 @@ class GroupOfDie {
         int count = 0;
         int alreadyCounted = 0;
         for (int i = 0; i < dice.length; i++)   {
-            count = 0;
             for (int j = 0; j < dice.length; j++)   {
                 if((dice[i].getVal() == dice[j].getVal()) && (j != i) && (dice[i].getVal() != alreadyCounted))  {
                     if (count >= 2)  {
@@ -46,6 +54,7 @@ class GroupOfDie {
                     alreadyCounted = dice[i].getVal();
                 }
             }
+            count = 0;
             sum += count;
         }
         return sum;
