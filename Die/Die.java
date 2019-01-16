@@ -1,4 +1,5 @@
 import java.util.Random;
+import java.util.ArrayList;
 
 class Die {
    
@@ -9,16 +10,39 @@ class Die {
     private int probability = 0;
     private boolean loaded = false;
     private Random random;
+    private ArrayList<Integer> history;
+
+    //notes
+    // ArrayList<String> list = new ArrayList<String>();
+
+    // list.add("New String")
+
+    // list.get(0) // arr[0]
+
+    // list.size(); // arr.length
+
+    // //Wrapper
+    // ArrayList<Integer> nums = new ArrayList<Integer>();
+
+    // nums.add(new Integer(5));
+
+    // int x = nums.get(0).value();
+
+    // //  x  x  x  x  x  x
+    // // [5, 1, 1, 1, 1, 1]
+    // // [5, 1, 1, 1, 1, 1, 0, 0, 0, 0, 0, 0]
 
     Die (int sides) {
         this.sides = sides;
         random = new Random();
+        history = new ArrayList<Integer>();
         roll();
     }
 
     Die (int sides, int seed) {
         this.sides = sides;
         random = new Random(seed);
+        history = new ArrayList<Integer>();
         roll();
     }
 
@@ -45,6 +69,7 @@ class Die {
             }
         }
         roll++;
+        history.add(new Integer(value));
     }
 
     public String graphValsProb(int numOfRolls) {
@@ -118,18 +143,6 @@ class Die {
         }
     }
 
-    public int getVal() {
-        return value;
-    }
-
-    public void setVal(int newVal)  {
-        this.value = newVal;
-    }
-
-    public int getNumRolls() {
-        return roll;
-    }
-
     public boolean loadCheck() {
         double[] diePercent = new double[sides];
         double count = 0.0;
@@ -151,5 +164,25 @@ class Die {
         }
         return false;
     }
+
+    public int getVal() {
+        return value;
+    }
+
+    public void setVal(int newVal)  {
+        this.value = newVal;
+    }
+
+    public int getNumRolls() {
+        return roll;
+    }
+
+    public void printHistory()  {
+        //for each 
+        for (Integer num : history) {
+            System.out.println(num.value());
+        }
+    }
+
 
 }
