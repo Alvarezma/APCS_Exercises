@@ -35,6 +35,36 @@ class TODOList  {
         list.get(target).setStatus(status);
     }
 
+    public void sortList()  {
+        for(int i = 0; i < list.size(); i++)    {
+            TODO object1 = list.get(i);
+            for(int j = i; j < list.size(); j++)    {
+                TODO object2 = list.get(j);
+                if (object1.getPriority() > object2.getPriority())  {
+                    list.set(i, object2);
+                    list.set(j, object1);
+                    object1 = object2;
+                }
+            }
+        }
+    }
+
+    public void sortList2()  {
+        int swaps = 1;
+        while(swaps > 0)    {
+            swaps = 0;
+            for(int i = 0; i < list.size() - 1; i++)    {
+                TODO object1 = list.get(i);
+                TODO object2 = list.get(i + 1);
+                if(object1.getPriority() > object2.getPriority())   {
+                    list.set(i, object2);
+                    list.set((i + 1), object1);
+                    swaps++;
+                }
+            }
+        }
+    }
+
 
 
 

@@ -13,10 +13,10 @@ class TODOListRunner    {
         String complete;
         TODOList todd = new TODOList();
 
-        System.out.println("Enter a number to continue\n1 = adding\n2 = display\n3 = change items status\n4 = remnove an item\n0 = quit");
+        System.out.println("Enter a number to continue\n1 = adding\n2 = display\n3 = change items status\n4 = remnove an item\n5 = sort list\n0 = quit");
         input = scan.nextInt();
-        while (input < 0 || input > 4)   {
-            System.out.println("Incorrect input please enter a input between 0 and 4");
+        while (input < 0 || input > 5)   {
+            System.out.println("Incorrect input please enter a input between 0 and 5");
             input = scan.nextInt();
         }
 
@@ -52,10 +52,13 @@ class TODOListRunner    {
                 System.out.println("Place in list?");
                 target = scan.nextInt();
                 todd.remove(target);
+            } else if(input == 5)   {
+                todd.sortList2();
+                System.out.println("\n" + todd.display());
             }
-            System.out.println("\nEnter a number to continue\n1 = adding\n2 = display\n3 = change items status\n4 = remnove an item\n0 = quit");
+            System.out.println("\nEnter a number to continue\n1 = adding\n2 = display\n3 = change items status\n4 = remnove an item\n5 = sort list\n0 = quit");
             input = scan.nextInt();
-            while (input < 0 || input > 4)   {
+            while (input < 0 || input > 5)   {
                 System.out.println("Incorrect input please enter a input between 0 and 4");
                 input = scan.nextInt();
             }
