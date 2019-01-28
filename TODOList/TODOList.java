@@ -35,7 +35,7 @@ class TODOList  {
         list.get(target).setStatus(status);
     }
 
-    public void sortList()  {
+    public void selectionSort()  {
         for(int i = 0; i < list.size(); i++)    {
             TODO object1 = list.get(i);
             for(int j = i; j < list.size(); j++)    {
@@ -49,7 +49,7 @@ class TODOList  {
         }
     }
 
-    public void sortList2()  {
+    public void bubbleSort()  {
         int swaps = 1;
         while(swaps > 0)    {
             swaps = 0;
@@ -60,6 +60,19 @@ class TODOList  {
                     list.set(i, object2);
                     list.set((i + 1), object1);
                     swaps++;
+                }
+            }
+        }
+    }
+
+    public void insertionSort()  {
+        for(int i = 1; i < list.size(); i++)    {
+            TODO object1 = list.get(i);
+            for(int j = (i - 1); j >= 0; j--)    {
+                TODO object2 = list.get(j);
+                if (object1.getPriority() < object2.getPriority())  {
+                    list.set((j + 1), object2);
+                    list.set(j, object1);
                 }
             }
         }

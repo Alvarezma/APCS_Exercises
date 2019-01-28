@@ -53,7 +53,9 @@ class TODOListRunner    {
                 target = scan.nextInt();
                 todd.remove(target);
             } else if(input == 5)   {
-                todd.sortList2();
+                // todd.selectionSort();
+                // todd.bubbleSort();
+                todd.insertionSort();
                 System.out.println("\n" + todd.display());
             }
             System.out.println("\nEnter a number to continue\n1 = adding\n2 = display\n3 = change items status\n4 = remnove an item\n5 = sort list\n0 = quit");
