@@ -37,13 +37,12 @@ class TODOList  {
 
     public void selectionSort()  {
         for(int i = 0; i < list.size(); i++)    {
-            TODO object1 = list.get(i);
+            TODO object = list.get(i);
             for(int j = i; j < list.size(); j++)    {
-                TODO object2 = list.get(j);
-                if (object1.getPriority() > object2.getPriority())  {
-                    list.set(i, object2);
-                    list.set(j, object1);
-                    object1 = object2;
+                if (object.getPriority() > list.get(j).getPriority())  {
+                    list.set(i, list.get(j));
+                    list.set(j, object);
+                    object = list.get(i);
                 }
             }
         }
@@ -54,11 +53,10 @@ class TODOList  {
         while(swaps > 0)    {
             swaps = 0;
             for(int i = 0; i < list.size() - 1; i++)    {
-                TODO object1 = list.get(i);
-                TODO object2 = list.get(i + 1);
-                if(object1.getPriority() > object2.getPriority())   {
-                    list.set(i, object2);
-                    list.set((i + 1), object1);
+                TODO object = list.get(i);
+                if(object.getPriority() > list.get(i + 1).getPriority())   {
+                    list.set(i, list.get(i + 1));
+                    list.set((i + 1), object);
                     swaps++;
                 }
             }
@@ -67,15 +65,37 @@ class TODOList  {
 
     public void insertionSort()  {
         for(int i = 1; i < list.size(); i++)    {
-            TODO object1 = list.get(i);
-            for(int j = (i - 1); j >= 0; j--)    {
-                TODO object2 = list.get(j);
-                if (object1.getPriority() < object2.getPriority())  {
-                    list.set((j + 1), object2);
-                    list.set(j, object1);
+            TODO object = list.get(i);
+            for(int j = i - 1; j >= 0; j--)    {
+                if (object.getPriority() < list.get(j).getPriority())  {
+                    list.set((j + 1), list.get(j));
+                    list.set(j, object);
                 }
             }
         }
+    }
+
+    public void combSort()  {
+        int gap = list.size()/2;
+        while(gap > 0)    {
+            for(int i = 0; i < list.size() - gap; i++)    {
+                TODO object = list.get(i);
+                if(object.getPriority() > list.get(i + gap).getPriority())   {
+                    list.set(i, list.get(i + gap));
+                    list.set((i + gap), object);
+                }
+            }
+            gap = (int)(gap / 1.3);
+        }
+    }
+
+    public boolean sortCheck()  {
+        for(int i = 0; i < list.size() - 1; i++)    {
+            if(list.get(i).getPriority() > list.get(i + 1).getPriority())   {
+                return false;
+            }
+        }
+        return true;
     }
 
 
