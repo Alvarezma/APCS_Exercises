@@ -98,6 +98,22 @@ class TODOList  {
         return true;
     }
 
+    public boolean priorityExists(int target) {
+        for (int i = 0; i < list.size(); i++)   {
+            if(list.get(i).getPriority() == target) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public boolean priorityExistsPairs(int target, int target2) {
+        if (priorityExists(target) && priorityExists(target2))  {
+            return true;
+        }
+        return false;
+    }
+
 
 
 
