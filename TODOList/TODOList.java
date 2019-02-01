@@ -114,6 +114,26 @@ class TODOList  {
         return false;
     }
 
+    public boolean binarySearch(int target) {
+        int left = 0;
+        int right = list.size() - 1;
+        int place = list.size()/2;
+        while   (1 == 1) {
+            place = ((right - left) / 2) + left;
+
+            if (list.get(place).getPriority() == target || list.get(left).getPriority() == target || list.get(right).getPriority() == target)    {
+                return true;
+            } else if (list.get(place).getPriority() < target)  {
+                left = place;
+            } else  {
+                right = place;
+            }
+            if (right - left < 2)   {
+                return false;
+            }
+        }
+    }
+
 
 
 

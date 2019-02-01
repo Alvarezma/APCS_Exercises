@@ -7,6 +7,7 @@ public class TODOListTester{
         System.out.println(testBubbleSort());
         System.out.println(testInsertionSort());
         System.out.println(testCombSort());
+        System.out.println(testBinarySearch());
     }
 
     public static boolean testSelectionSort()  {
@@ -47,5 +48,28 @@ public class TODOListTester{
         }
         todd.combSort();
         return todd.sortCheck();
+    }
+
+    public static boolean testBinarySearch()  {
+        TODOList todd = new TODOList();
+        todd.add("coolio", 2); //0  
+        todd.add("coolio", 2); //1
+        todd.add("coolio", 2); //2
+        todd.add("coolio", 2); //3
+        todd.add("coolio", 2); //4
+        todd.add("coolio", 2); //5
+        todd.add("coolio", 2); //6
+        todd.add("coolio", 2); //7
+        todd.add("coolio", 3); //8
+        todd.add("coolio", 3); //9
+        todd.add("coolio", 4); //10
+        todd.add("coolio", 5); //11
+        todd.add("coolio", 5); //12
+        todd.add("coolio", 5); //13
+        todd.add("coolio", 5); //14
+        todd.add("coolio", 5); //15
+        todd.add("coolio", 5); //16
+        todd.add("coolio", 5); //17
+        return todd.binarySearch(4);
     }
 }
