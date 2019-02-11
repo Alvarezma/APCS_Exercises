@@ -18,4 +18,5 @@ public class H {
         StdDraw.line(center.x - (relativeSize/2), center.y - (relativeSize/2), center.x - (relativeSize/2), center.y + (relativeSize/2));
         StdDraw.line(center.x + (relativeSize/2), center.y - (relativeSize/2), center.x + (relativeSize/2), center.y + (relativeSize/2));
     }
+
 }
