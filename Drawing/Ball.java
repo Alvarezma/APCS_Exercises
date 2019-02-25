@@ -29,10 +29,24 @@ public class Ball {
         center.y += velocity.y;
 
         if (center.x - radius < min.x || center.x + radius > max.x) {
+            hitWall();
             velocity.x *= -1;
         }
         if (center.y - radius < min.y || center.y + radius > max.y) {
+            hitWall();
             velocity.y *= -1;
         }
+    }
+
+    public void hitWall()   {
+        // no implementation
+    }
+
+    public void setRadius(double radius)    {
+        this.radius = radius;
+    }
+
+    public double getRadius()    {
+        return radius;
     }
 }

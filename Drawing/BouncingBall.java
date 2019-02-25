@@ -1,11 +1,17 @@
 import java.awt.geom.Point2D;
 import java.awt.Color;
+//import java.awt.event.MouseListener;
+//import java.awt.event.MouseEvent;
 
 public class BouncingBall {
-    private static Point2D.Double min, max;
-    private static Ball ball;
+    private Point2D.Double min, max;
+    private Ball ball;
 
     public static void main(String[] args)  {
+        BouncingBall bball = new BouncingBall();
+    }
+
+    public BouncingBall()   {
         setup();
 
         while(true) {
@@ -13,7 +19,7 @@ public class BouncingBall {
         }
     }
 
-    public static void setup()  {
+    public void setup()  {
         min = new Point2D.Double(0, 0);
         max = new Point2D.Double(100, 100);
 
@@ -21,10 +27,10 @@ public class BouncingBall {
         StdDraw.setYscale(min.y, max.y);
         StdDraw.enableDoubleBuffering();
 
-        ball = new Ball(50, 50, 10, StdDraw.WHITE);
+        ball = new ResizingBall(50, 50, 10, StdDraw.WHITE);
     }
 
-    public static void loop()   {
+    public void loop()   {
         StdDraw.clear(StdDraw.GRAY);
 
         ball.draw();
@@ -33,6 +39,26 @@ public class BouncingBall {
 
         ball.update(min, max);
     }
+
+    // public void mouseExited(MouseEvent e)    {
+        
+    // }
+    
+    // public void mouseEntered(MouseEvent e)    {
+
+    // }
+
+    // public void mouseReleased(MouseEvent e)    {
+
+    // }
+
+    // public void mousePressed(MouseEvent e)    {
+
+    // }
+
+    // public void mouseClicked(MouseEvent e)    {
+    //     System.out.println("click");
+    // }
 
     
 }
