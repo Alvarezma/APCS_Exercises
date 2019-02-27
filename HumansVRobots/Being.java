@@ -1,28 +1,31 @@
 public class Being  {
 
-    private String name;
     private int intelligence;
     private int strength;
 
-    public Being(String name, int intelligence, int strength)  {
-        this.name = name;
+    public Being(int intelligence, int strength)  {
         this.intelligence = intelligence;
         this.strength = strength;
     }
 
     public String sayHi(Being b)    {
-        return "hello";
+        return "say hi broke";
     }
 
-    // public String startFight(Human h)  {
-        
-    // }
+    public String startFight(Being b)  {
+        return "fighting broke";
+    }
 
-    public String getName() {return name;}
     public int getIntelligence() {return intelligence;}
     public int getStrength() {return strength;}
 
-    public void setName(String name) {this.name = name;}
     public void setIntelligence(int intelligence) {this.intelligence = intelligence;}
     public void setStrength(int strength) {this.strength = strength;}
+
+    //Human
+    public String getName() {return "";}
+    public void setName() {}
+    //Robot
+    public int getId()  {return 0;}
+    public void setId()  {}
 }
